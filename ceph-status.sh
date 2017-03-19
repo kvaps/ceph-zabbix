@@ -213,13 +213,13 @@ case $1 in
     esac
   ;;
   rados_total)
-    $rados_bin df | grep "total space"| awk '{print $3}'
+    $rados_bin df | grep "total_space"| awk '{print $2}'
   ;;
   rados_used)
-    $rados_bin df | grep "total used"| awk '{print $3}'
+    $rados_bin df | grep "total_used"| awk '{print $2}'
   ;;
   rados_free)
-    $rados_bin df | grep "total avail"| awk '{print $3}'
+    $rados_bin df | grep "total_avail"| awk '{print $2}'
   ;;
   mon)
     ceph_mon_get_active
